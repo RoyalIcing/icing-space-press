@@ -17,10 +17,5 @@ export default {
 async function handleRequest(request: Request): Promise<Response> {
   const { pathname } = new URL(request.url);
 
-  if (pathname.startsWith("/assets/")) {
-    // TODO: handle these inside serveRequest()
-    return fetch(new URL(pathname, "https://collected.press/").href);
-  }
-
   return serveRequest('RoyalIcing', 'RoyalIcing', pathname);
 }
